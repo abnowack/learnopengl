@@ -17,15 +17,33 @@ target_link_libraries(triangles PRIVATE glad glfw3 opengl32)
 add_executable(shaders src/Shaders.cpp)
 target_link_libraries(shaders PRIVATE glad glfw3 opengl32)
 
-set(SCRIPTS
-	src/vertex.vs
-	src/fragment.fs
+add_executable(textures src/Textures.cpp)
+target_link_libraries(textures PRIVATE glad glfw3 opengl32)
+
+set(SHADERS
+	src/shaders/vertex.vs
+	src/shaders/fragment.fs
+	src/shaders/texture.vs
+	src/shaders/texture.fs
 )
 
-foreach(_script ${SCRIPTS})
+set(RESOURCES
+	src/resources/container.jpg
+	src/resources/wall.jpg
+)
+
+foreach(_shader ${SHADERS})
     configure_file(
-        ${PROJECT_SOURCE_DIR}/${_script}
-        ${PROJECT_BINARY_DIR}/${_script}
+        ${PROJECT_SOURCE_DIR}/${_shader}
+        ${PROJECT_BINARY_DIR}/${_shader}
         COPYONLY
     )
-endforeach(_script ${SCRIPTS})
+endforeach(_shader ${SHADERS})
+
+foreach(_res ${RESOURCES})
+    configure_file(
+        ${PROJECT_SOURCE_DIR}/${_res}
+        ${PROJECT_BINARY_DIR}/${_res}
+        COPYONLY
+    )
+endforeach(_res ${RESOURCES})
