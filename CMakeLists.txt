@@ -29,6 +29,7 @@ set(SHADERS
 
 set(RESOURCES
 	src/resources/container.jpg
+	src/resources/awesomeface.png
 	src/resources/wall.jpg
 )
 
