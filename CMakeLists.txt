@@ -19,6 +19,7 @@ add_subdirectory(src/2_shaders/)
 add_subdirectory(src/3_textures/)
 add_subdirectory(src/4_transformations/)
 add_subdirectory(src/5_coordinates/)
+add_subdirectory(src/6_camera/)
 
 set(RESOURCES
 	src/resources/container.jpg
