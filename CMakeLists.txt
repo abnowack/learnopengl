@@ -18,6 +18,7 @@ add_subdirectory(src/1_triangles/)
 add_subdirectory(src/2_shaders/)
 add_subdirectory(src/3_textures/)
 add_subdirectory(src/4_transformations/)
+add_subdirectory(src/5_coordinates/)
 
 set(RESOURCES
 	src/resources/container.jpg
